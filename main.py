@@ -51,6 +51,9 @@ class App:
         self.canvas.bind("<Button-3>", lambda e: self.zoom(2, e.x, e.y))
         root.bind("<KeyPress-r>", lambda e: self.reset())
         root.bind("<KeyPress-R>", lambda e: self.reset())
+        root.bind("<KeyPress-plus>", lambda e: self.zoom(0.5))
+        root.bind("<KeyPress-equal>", lambda e: self.zoom(0.5))
+        root.bind("<KeyPress-minus>", lambda e: self.zoom(2))
         root.protocol("WM_DELETE_WINDOW", self.close)
         self.draw()
 
