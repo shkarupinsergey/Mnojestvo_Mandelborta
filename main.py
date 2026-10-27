@@ -49,6 +49,8 @@ class App:
         self.status.pack(pady=5)
         self.canvas.bind("<Button-1>", lambda e: self.zoom(0.5, e.x, e.y))
         self.canvas.bind("<Button-3>", lambda e: self.zoom(2, e.x, e.y))
+        root.bind("<KeyPress-r>", lambda e: self.reset())
+        root.bind("<KeyPress-R>", lambda e: self.reset())
         root.protocol("WM_DELETE_WINDOW", self.close)
         self.draw()
 
